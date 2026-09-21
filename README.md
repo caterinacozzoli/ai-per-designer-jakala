@@ -9,11 +9,12 @@ Slide navigabili (reveal-style, HTML self-contained) + script per gli oratori.
 index.html                         → hub: apri questo
 assets/  jakala.css · deck.js · qr-feedback.svg
 lezione-1-fondamenti/
-  slides.html   (18 slide)         → le AI, energia, file/Markdown, prompt design, etica (Dove), 2 quiz
-  script.html                      → run-of-show 60 min, parlato + cue di passaggio
+  slides.html   (25 slide)         → le AI + allucinazioni, energia/consumi, file/Markdown, skillset, prompt design, inclusività, LAB Figma, 2 quiz
+  script.html                      → run-of-show ~75 min, parlato + cue di passaggio
+  lab-figma.html                   → guida facilitatore + schema board Figma per il lab hands-on (15')
 lezione-2-tool-antigravity/
-  slides.html   (19 slide)         → tool AI per fase del design process, Figma AI/Vizcom/Manus, Antigravity, 2 quiz
-  script.html                      → run-of-show 60 min
+  slides.html   (22 slide)         → tool AI per fase (+ framework Frame/Foster/Design/Scale), Figma AI/Vizcom/Manus, Antigravity, AI-enabled experiences, 2 quiz
+  script.html                      → run-of-show ~60–65 min
 ```
 
 Oratori: **Caterina** (anchor), Gaia, Alberto, Sara. Tono business casual, con quiz Kahoot.

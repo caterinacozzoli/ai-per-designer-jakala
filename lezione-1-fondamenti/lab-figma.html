@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab hands-on — Lezione 1: schema board Figma + guida facilitatore</title>
+  <link rel="stylesheet" href="../assets/jakala.css">
+  <style>
+    body { background: var(--c-ink-050); color: var(--c-ink-800); }
+    .doc { max-width: 900px; margin: 0 auto; padding: clamp(24px,5vw,64px) var(--s-6) 96px; }
+    .doc h1 { font-size: clamp(30px,5vw,46px); letter-spacing:-.02em; margin:0 0 6px; }
+    .doc .meta { color: var(--c-ink-600); font-size:16px; margin:0 0 4px; }
+    .kicker { display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--c-blue-600); }
+    .kicker::before { content:""; width:9px;height:9px;border-radius:999px;background:var(--c-blue-500);box-shadow:0 0 0 4px var(--c-blue-100); }
+    .block { background:#fff; border:1px solid var(--c-ink-200); border-radius:16px; padding:24px 28px; margin:18px 0; box-shadow:var(--sh-1); }
+    .block h2 { font-size:22px; margin:0 0 10px; letter-spacing:-.01em; }
+    .block h3 { font-size:15px; margin:16px 0 6px; color:var(--c-blue-700); }
+    .runsheet { width:100%; border-collapse:collapse; margin:8px 0; font-size:14px; }
+    .runsheet th { text-align:left; text-transform:uppercase; letter-spacing:.06em; font-size:11px; color:var(--c-ink-500); border-bottom:2px solid var(--c-ink-200); padding:8px 10px; }
+    .runsheet td { padding:8px 10px; border-bottom:1px solid var(--c-ink-200); vertical-align:top; }
+    .runsheet .t { font-variant-numeric:tabular-nums; font-weight:800; white-space:nowrap; }
+    .frame { border:1px dashed var(--c-blue-300); background:var(--c-blue-050); border-radius:12px; padding:14px 18px; margin:10px 0; }
+    .frame b { color:var(--c-blue-700); }
+    pre.tpl { background:var(--c-ink-900); color:#d7e3ec; border-radius:10px; padding:16px 18px; font-family:var(--font-mono); font-size:13px; line-height:1.6; white-space:pre-wrap; overflow:auto; }
+    .todo { background:#fdf1dc; border:1px solid #eccf96; border-radius:10px; padding:12px 16px; font-size:14px; color:#7a4d00; }
+    .who-chip { display:inline-block; font-weight:800; font-size:12px; padding:2px 8px; border-radius:999px; }
+    .c-cate { background:#e4e9ff; color:#12269a; } .c-gaia { background:#e4f6ec; color:#0a6e3d; }
+    .c-albe { background:#fdf1dc; color:#8a5600; } .c-sara { background:#ffe0ea; color:#b3134d; }
+    ul.tight { margin:6px 0; padding-left:20px; } ul.tight li { margin:5px 0; }
+    a { color: var(--c-blue-600); }
+    @media print { body{background:#fff;} .block{box-shadow:none; break-inside:avoid;} .doc{padding:0;} }
+  </style>
+</head>
+<body>
+  <main class="doc">
+    <p class="kicker">Jakala · Lab hands-on</p>
+    <h1>Lezione 1 — 15 minuti in Figma</h1>
+    <p class="meta">Schema della board da preparare + guida per i 4 facilitatori. Obiettivo: applicare <strong>prompt design</strong> e <strong>prompt inclusivi</strong> su un micro-brief, in coppia.</p>
+    <div class="todo" style="margin-top:14px"><strong>Prima dell'aula:</strong> costruite la board (10 min seguendo lo schema qui sotto) e incollate il link nella slide 22 del deck. <strong>Oppure</strong> collegate il plugin <em>Figma UI MCP Bridge</em> e chiedetemi di generarla: la creo io.</div>
+
+    <div class="block">
+      <h2>Svolgimento — 15 minuti</h2>
+      <table class="runsheet">
+        <thead><tr><th>Tempo</th><th>Fase</th><th>Cosa fanno i partecipanti</th></tr></thead>
+        <tbody>
+          <tr><td class="t">0–2'</td><td>Setup</td><td>Si mettono in coppia, scelgono un micro-brief, copiano il template di prompt nel proprio slot.</td></tr>
+          <tr><td class="t">2–9'</td><td>Prompt + genera</td><td>Scrivono un prompt efficace (ruolo+contesto+formato+vincoli) e lo usano in Figma AI (First Draft/Make) o in una chat; incollano il risultato nello slot.</td></tr>
+          <tr><td class="t">9–12'</td><td>Inclusività</td><td>Applicano i 5 punti dei prompt inclusivi, rigenerano, annotano le differenze prima/dopo.</td></tr>
+          <tr><td class="t">12–15'</td><td>Share-back</td><td>2 coppie mostrano il “prima / dopo”. Ogni coppia salva il prompt migliore nella skill library.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="block">
+      <h2>Schema della board (cosa creare in Figma / FigJam)</h2>
+      <div class="frame"><b>Frame 0 · Istruzioni &amp; timer</b><br>Titolo del lab, i 4 step con i tempi, un timer (widget FigJam “Timer” impostato a 15 min).</div>
+      <div class="frame"><b>Frame 1 · Template di prompt</b> (sticky copiabile)<br>Il blocco template qui sotto, come sticky pronto da duplicare in ogni slot.</div>
+      <div class="frame"><b>Frame 2 · I 3 micro-brief</b><br>Tre card (A/B/C) con il brief. Le coppie ne scelgono uno.</div>
+      <div class="frame"><b>Frame 3 · Slot di lavoro</b> (uno per coppia)<br>Riquadri numerati “Coppia 1…N”, ognuno con: prompt v1, output v1, prompt inclusivo v2, output v2, note prima/dopo.</div>
+      <div class="frame"><b>Frame 4 · Rubric</b><br>I 4 criteri di valutazione come checklist accanto a ogni slot.</div>
+      <div class="frame"><b>Frame 5 · Skill library</b><br>Una colonna “I nostri prompt migliori” dove ogni coppia trascina il prompt vincente a fine lab.</div>
+    </div>
+
+    <div class="block">
+      <h2>Template di prompt (sticky del Frame 1)</h2>
+      <pre class="tpl">RUOLO: agisci come [es. UX writer senior]
+CONTESTO: prodotto = [...], utente = [...], tono di voce = [...]
+COMPITO: [crea / scrivi / genera] ...
+FORMATO: cosa produrre e in che quantità [es. 1 headline max 8 parole + 3 bullet]
+VINCOLI: lunghezza, stile, cosa DEVE e cosa NON deve esserci
+INCLUSIVITA': dimensioni di diversita' da rappresentare esplicitamente
+              (genere, abilita', eta', etnia, contesto), evita stereotipi</pre>
+    </div>
+
+    <div class="block">
+      <h2>I 3 micro-brief</h2>
+      <h3>Brief A — Hero di una landing</h3>
+      <p>App gestionale HR per PMI. Obiettivo: comunicare valore in 5 secondi. Output atteso: 1 headline + 1 sottotitolo + 3 bullet di beneficio.</p>
+      <h3>Brief B — Empty state</h3>
+      <p>Dashboard analytics appena creata, ancora senza dati. Output atteso: titolo + 1 frase + 1 call to action che spiega cosa fare per primo.</p>
+      <h3>Brief C — Onboarding</h3>
+      <p>Primo step di un'app bancaria pensata per utenti over-65. Output atteso: microcopy di 1 schermata (titolo, spiegazione, bottone) chiara e rassicurante.</p>
+    </div>
+
+    <div class="block">
+      <h2>Rubric (Frame 4)</h2>
+      <ul class="tight">
+        <li>☐ <strong>Ruolo + contesto</strong> presenti nel prompt</li>
+        <li>☐ <strong>Formato + vincoli</strong> chiari e specifici</li>
+        <li>☐ <strong>Inclusività esplicita</strong> (non lasciata al “default” del modello)</li>
+        <li>☐ <strong>Output usabile</strong> → salvato nella skill library</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2>Ruoli dei facilitatori (15')</h2>
+      <ul class="tight">
+        <li><span class="who-chip c-cate">Caterina</span> coordina, tiene il tempo, gestisce lo share-back finale.</li>
+        <li><span class="who-chip c-sara">Sara</span> gira tra le coppie sui <strong>prompt</strong> (ruolo/contesto/formato).</li>
+        <li><span class="who-chip c-gaia">Gaia</span> gira sull'<strong>inclusività</strong> (i 5 punti, evitare stereotipi).</li>
+        <li><span class="who-chip c-albe">Alberto</span> sblocca sul <strong>tecnico</strong> (Figma AI, come incollare l'output, skill library).</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2>Cosa si portano a casa</h2>
+      <p>Almeno <strong>un prompt riutilizzabile e inclusivo</strong> per coppia — la prima entry concreta della <strong>skill library</strong> condivisa del team, che nella Lezione 2 riempiremo di strumenti.</p>
+    </div>
+
+  </main>
+</body>
+</html>
