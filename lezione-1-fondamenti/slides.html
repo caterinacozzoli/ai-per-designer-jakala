@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI per Designer — Lezione 1: Fondamentali &amp; Prompt Design</title>
+  <link rel="stylesheet" href="../assets/jakala.css">
+</head>
+<body>
+  <div id="live" class="sr-only" aria-live="polite"></div>
+  <div class="progress" id="progress"></div>
+
+  <div class="deck-stage">
+    <div class="deck">
+
+      <!-- 1 · COVER -->
+      <section class="slide slide--cover" aria-roledescription="slide">
+        <p class="eyebrow">Jakala · Formazione UX/UI</p>
+        <h1 class="display">AI per Designer</h1>
+        <h3 class="sub">Lezione 1 — Fondamentali &amp; Prompt Design</h3>
+        <p class="lead">Capire l'AI generativa senza magia nera: cos'è, quanto “pesa”, come legge i nostri file e come parlarle bene.</p>
+        <div class="row" style="margin-top:var(--s-6)">
+          <span class="badge">60 minuti</span>
+          <span class="badge badge--mag">4 oratori</span>
+          <span class="badge">Caterina · Gaia · Alberto · Sara</span>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Anchor: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~1,5 min</b> — Benvenuto, energia alta. “Oggi smontiamo l'AI come si smonta un layout: livello per livello. Zero paura, un po' di ironia.”</div><div class="n-sec"><b>Cue →</b> presenta i 4 e passa l'agenda.</div></aside>
+      </section>
+
+      <!-- 2 · AGENDA -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Agenda</p>
+        <h2 class="title">Un'ora, cinque tappe</h2>
+        <div class="body">
+          <div class="cols cols-3">
+            <div class="card card--tint"><span class="card__k">01 · Gaia</span><p class="card__t">Le varie AI</p><p class="card__d">Cos'è l'AI, la mappa dei termini, la timeline, come “pensa”.</p></div>
+            <div class="card card--tint"><span class="card__k">02 · Alberto</span><p class="card__t">Energia &amp; file</p><p class="card__d">Quanto consuma una query e come l'AI legge PDF, JPEG, Markdown.</p></div>
+            <div class="card card--tint"><span class="card__k">03 · Sara</span><p class="card__t">Prompt design</p><p class="card__d">Mindset, tipi di prompt, regole, formula per le immagini.</p></div>
+            <div class="card card--mag"><span class="card__k">04 · Gaia</span><p class="card__t">AI etica &amp; inclusiva</p><p class="card__d">Bias nei dati e come cambiare l'output con il prompt.</p></div>
+            <div class="card"><span class="card__k">05 · Caterina</span><p class="card__t">2 quiz + feedback</p><p class="card__d">Kahoot a metà e in chiusura, poi il Google Form.</p></div>
+            <div class="card card--flat" style="justify-content:center"><p class="small"><strong>Patto d'aula:</strong> domande quando volete, niente domande stupide, solo prompt migliorabili. <span aria-hidden="true">🙂</span></p></div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Anchor: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~1,5 min</b> — Scorri veloce l'agenda, di' i nomi. Il “patto d'aula” abbassa la soglia di imbarazzo.</div><div class="n-sec"><b>Cue →</b> “Gaia, cos'è davvero questa AI?”</div></aside>
+      </section>
+
+      <!-- 3 · COS'È L'AI (3 livelli) -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Le varie AI · 1</p>
+        <h2 class="title">Tre parole che non sono sinonimi</h2>
+        <div class="body">
+          <div class="cols cols-3">
+            <div class="card"><span class="card__icon" aria-hidden="true">🧠</span><p class="card__t">AI</p><p class="card__d">Macchine che imparano, ragionano e decidono simulando capacità umane. È l'ombrello.</p></div>
+            <div class="card card--tint"><span class="card__icon" aria-hidden="true">✨</span><p class="card__t">Generative AI</p><p class="card__d">Un sottoinsieme che <strong>crea contenuti nuovi</strong>: testo, immagini, audio, codice, 3D.</p></div>
+            <div class="card card--mag"><span class="card__icon" aria-hidden="true">🎯</span><p class="card__t">Prompt design</p><p class="card__d">L'abilità di <strong>formulare input precisi</strong> per guidare la GenAI verso il risultato giusto.</p></div>
+          </div>
+          <p class="lead">Regola mentale: <em class="hl">AI ⊃ Generative AI ⊃ (il tuo) Prompt</em>. Più stringi il cerchio, più conta come scrivi.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Gaia</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Gaia · ~4 min</b> — Fonte: TAG · Prompt design (Sketchin/Jakala). Insisti: “Gen AI è un sottoinsieme, non un sinonimo di AI”.</div></aside>
+      </section>
+
+      <!-- 4 · MAPPA DELLE AI -->
+      <section class="slide slide--dark" aria-roledescription="slide">
+        <p class="eyebrow">Le varie AI · 2</p>
+        <h2 class="title">La famiglia allargata (in breve)</h2>
+        <div class="body">
+          <div class="cols cols-3">
+            <div class="card card--dark"><p class="card__t">Machine Learning</p><p class="card__d">Impara da esempi: classificazione, previsioni, raccomandazioni.</p></div>
+            <div class="card card--dark"><p class="card__t">NLP &amp; LLM</p><p class="card__d">Capire e generare linguaggio. Gli <strong>LLM</strong> sono i motori delle chat.</p></div>
+            <div class="card card--dark"><p class="card__t">Computer Vision</p><p class="card__d">Vedere: riconoscere oggetti, leggere testo, analizzare layout.</p></div>
+            <div class="card card--dark"><p class="card__t">Multimodale</p><p class="card__d">Un solo modello per testo + immagini + audio insieme.</p></div>
+            <div class="card card--dark"><p class="card__t">Speech</p><p class="card__d">Speech-to-text e text-to-speech: la voce come interfaccia.</p></div>
+            <div class="card card--dark"><p class="card__t">Agenti (LAM)</p><p class="card__d">Non rispondono soltanto: <strong>pianificano e agiscono</strong> per un obiettivo.</p></div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Gaia</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Gaia · ~3 min</b> — Non elencare tutto: dai 1 esempio per box. Ancora al nostro mestiere (CV = “legge un layout”).</div></aside>
+      </section>
+
+      <!-- 5 · TIMELINE -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Le varie AI · 3</p>
+        <h2 class="title">Da “giocattolo” a collega, in ~3 anni</h2>
+        <div class="body">
+          <div class="steps">
+            <div class="step"><span class="step__n">FINE 2022</span><p class="step__t">Gli LLM aumentano la produttività.</p></div>
+            <div class="step"><span class="step__n">2023</span><p class="step__t">Integrati nei servizi e nei prodotti.</p></div>
+            <div class="step"><span class="step__n">2024</span><p class="step__t">Multimodale + primi prodotti agentivi.</p></div>
+            <div class="step"><span class="step__n">2025</span><p class="step__t">Reasoning migliore, AI dentro la ricerca.</p></div>
+            <div class="step"><span class="step__n">OGGI →</span><p class="step__t">Gli agenti iniziano a fare task complessi al posto nostro.</p></div>
+          </div>
+          <p class="lead">Il punto per noi: l'interfaccia diventa <em class="hl">adattiva</em>. Progettiamo sempre più <strong>comportamenti</strong>, non solo schermate.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Gaia</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Gaia · ~3 min</b> — Fonte: Intro to genAI (Sketchin). Battuta: “nel 2022 completava le frasi, oggi completa i task”.</div><div class="n-sec"><b>Cue →</b> “Ma tutto questo, quanto costa in energia? Alberto.”</div></aside>
+      </section>
+
+      <!-- 6 · COME PENSA LA GENAI -->
+      <section class="slide slide--tint" aria-roledescription="slide">
+        <p class="eyebrow">Le varie AI · 4</p>
+        <h2 class="title">Non è una calcolatrice: è probabilistica</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <ul class="ticks">
+              <li>Predice il pezzo di contenuto <strong>più plausibile</strong>, non “la” verità.</li>
+              <li>Output <strong>non-deterministico</strong>: stesso prompt → risposte diverse.</li>
+              <li>Può “allucinare”: inventa con sicurezza. <strong>Sempre verificare.</strong></li>
+            </ul>
+            <div class="card">
+              <span class="card__k">Conseguenza di design</span>
+              <p class="card__d">Trattala come un <strong>co-pilota</strong>, non come un oracolo. Iterazione &gt; primo colpo. Il valore lo mette il tuo giudizio.</p>
+            </div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Gaia</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Gaia · ~2,5 min</b> — Concetto chiave che regge tutta la parte prompt: probabilistico = va guidato e verificato.</div></aside>
+      </section>
+
+      <!-- 7 · ENERGIA -->
+      <section class="slide slide--dark" aria-roledescription="slide">
+        <p class="eyebrow">Energia &amp; file · 1</p>
+        <h2 class="title">Quanto “pesa” una richiesta? <span aria-hidden="true">🌍</span></h2>
+        <div class="body">
+          <div class="cols cols-3">
+            <div class="stat"><span class="stat__n">~0,24</span><span class="stat__u">Wh / prompt testo</span><span class="stat__d">≈ 9 secondi di una TV · ≈ 0,26 mL d'acqua (Google, 2025)</span></div>
+            <div class="stat stat--mag"><span class="stat__n">~10×</span><span class="stat__u">un'immagine</span><span class="stat__d">generare un'immagine costa molto più di un testo</span></div>
+            <div class="stat"><span class="stat__n">100×+</span><span class="stat__u">un video</span><span class="stat__d">i video pesano ordini di grandezza in più</span></div>
+          </div>
+          <p class="lead">Non per farci sentire in colpa: per <strong>scegliere con criterio</strong>. Testo quando basta, immagini/video quando servono davvero.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Alberto</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Alberto · ~3,5 min</b> — <b>[DA AGGIORNARE]</b> Cifre indicative da report Google 2025 sull'energia di Gemini: verificare l'ultima fonte prima dell'aula. Ordini di grandezza &gt; numero esatto.</div></aside>
+      </section>
+
+      <!-- 8 · FILE -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Energia &amp; file · 2</p>
+        <h2 class="title">Come l'AI legge i nostri file</h2>
+        <div class="body">
+          <table class="tbl">
+            <thead><tr><th>Formato</th><th>Cosa “vede” l'AI</th><th>Occhio a…</th></tr></thead>
+            <tbody>
+              <tr><td><strong>PDF</strong></td><td>Estrae il testo; ottimo per documenti strutturati.</td><td>Può perdere impaginazione, colonne e tabelle complesse.</td></tr>
+              <tr><td><strong>JPEG / PNG</strong></td><td>Vision: interpreta i pixel, descrive, legge testo (OCR), analizza layout.</td><td>Testo minuscolo o a basso contrasto = errori.</td></tr>
+              <tr><td><strong>Markdown (.md)</strong></td><td>Struttura nativa (titoli, liste): leggero e <strong>chiarissimo</strong> per il modello.</td><td>Nessuna: è il formato che le AI amano. Pochi token, zero rumore.</td></tr>
+            </tbody>
+          </table>
+          <p class="lead">Regola pratica: se puoi dare <em class="hl">testo strutturato</em> invece di uno screenshot, fallo. Meno lavoro per l'AI = risposte migliori.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Alberto</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Alberto · ~3 min</b> — Prepara il quiz: “ma questo Markdown… che roba è?”. Lancia la slide dopo.</div></aside>
+      </section>
+
+      <!-- 9 · QUIZ 1 -->
+      <section class="slide slide--divider" aria-roledescription="slide">
+        <p class="eyebrow">Quiz Kahoot · #1</p>
+        <h2 class="title">Cos'è l'“MD”?</h2>
+        <div class="quiz">
+          <ul class="quiz__opts" style="list-style:none;padding:0;margin:0">
+            <li class="quiz__opt"><b>A</b> Una droga sintetica</li>
+            <li class="quiz__opt"><b>B</b> Il discount dove faccio la spesa</li>
+            <li class="quiz__opt quiz__opt--right"><b>C</b> Un formato di file: Markdown <span class="quiz__tag">✓ Corretto</span></li>
+            <li class="quiz__opt"><b>D</b> Un'abbreviazione di “Medical Doctor”</li>
+          </ul>
+          <div class="card card--dark center">
+            <span class="card__k" style="color:var(--c-blue-300)">Rispondi ora</span>
+            <p class="card__t" style="color:#fff">Kahoot</p>
+            <p class="card__d">[QR / PIN partita Kahoot — inserire prima dell'aula]</p>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Conduce: Alberto</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Alberto · ~2,5 min</b> — Momento leggero. Lascia 20s di suspense, poi rivela C. Battuta: “se avete risposto A, ne parliamo dopo la lezione”.</div><div class="n-sec"><b>Cue →</b> “Ok, sappiamo cos'è. Ora impariamo a PARLARLE. Sara.”</div></aside>
+      </section>
+
+      <!-- 10 · MINDSET -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Prompt design · 1</p>
+        <h2 class="title">Prima il mindset, poi la tecnica</h2>
+        <div class="body">
+          <div class="cols cols-3">
+            <div class="card"><span class="card__k">01</span><p class="card__t">Definisci l'obiettivo</p><p class="card__d">Cosa vuoi ottenere, in che formato, con quale contesto.</p></div>
+            <div class="card"><span class="card__k">02</span><p class="card__t">Itera</p><p class="card__d">Il primo output è un punto di partenza, non l'arrivo.</p></div>
+            <div class="card"><span class="card__k">03</span><p class="card__t">Usala come co-pilota</p><p class="card__d">Complemento alla tua creatività, non sostituto.</p></div>
+            <div class="card"><span class="card__k">04</span><p class="card__t">Pensa nuovo</p><p class="card__d">Non replicare i vecchi processi: chiediti cosa sblocca.</p></div>
+            <div class="card"><span class="card__k">05</span><p class="card__t">Verifica</p><p class="card__d">Controlla accuratezza e bias prima di usare.</p></div>
+            <div class="card"><span class="card__k">06</span><p class="card__t">Resta flessibile</p><p class="card__d">Output non-deterministico: esplora più strade.</p></div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Sara</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Sara · ~3 min</b> — Fonte: “The mindset for prompt design” (TAG). Non leggere i 6: raggruppa in “obiettivo → itera → verifica”.</div></aside>
+      </section>
+
+      <!-- 11 · 4 TIPI DI PROMPT -->
+      <section class="slide slide--tint" aria-roledescription="slide">
+        <p class="eyebrow">Prompt design · 2</p>
+        <h2 class="title">I quattro tipi di prompt</h2>
+        <div class="body">
+          <div class="cols cols-4">
+            <div class="card"><span class="card__k">01</span><p class="card__t">Informativo</p><p class="card__d">Risposte chiare e approfondite per decidere e imparare.</p></div>
+            <div class="card"><span class="card__k">02</span><p class="card__t">Generativo</p><p class="card__d">Idee, narrazioni, contenuti creativi nuovi.</p></div>
+            <div class="card"><span class="card__k">03</span><p class="card__t">Analitico</p><p class="card__d">Output organizzati: liste, tabelle, confronti.</p></div>
+            <div class="card card--mag"><span class="card__k">04</span><p class="card__t">Role-based</p><p class="card__d">Assegni un ruolo (“Sei un UX researcher…”) per risultati contestuali.</p></div>
+          </div>
+          <p class="lead">Il <em class="hl-m">role-based</em> è il preferito dei designer: “Agisci come un utente 65enne poco digitale e critica questo flusso”.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Sara</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Sara · ~3 min</b> — Fai l'esempio role-based dal vivo se c'è tempo: è il momento “ah, ecco a cosa serve”.</div></aside>
+      </section>
+
+      <!-- 12 · REGOLE D'ORO -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Prompt design · 3</p>
+        <h2 class="title">Le regole d'oro (testo)</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <ul class="ticks">
+              <li>Assegna un <strong>ruolo</strong> all'AI</li>
+              <li>Chiarisci lo <strong>scopo</strong> della richiesta</li>
+              <li>Inizia con un <strong>verbo d'azione</strong>: “crea, scrivi, analizza”</li>
+              <li>Dai <strong>contesto</strong> e dettagli specifici</li>
+              <li>Definisci il <strong>formato di output</strong></li>
+            </ul>
+            <ul class="ticks">
+              <li>Frasi affermative, <strong>niente ambiguità</strong></li>
+              <li><strong>Few-shot</strong>: fornisci 1–2 esempi</li>
+              <li><strong>Chained prompting</strong>: spezza in passi</li>
+              <li>Chiedile di <strong>chiedere</strong> se mancano dettagli</li>
+              <li>Costruisci una <strong>libreria di prompt</strong> personale</li>
+            </ul>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Sara</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Sara · ~3 min</b> — Fonte: “How to write prompts effectively” (18 regole → qui le 10 più utili). Evidenzia ruolo + contesto + formato.</div></aside>
+      </section>
+
+      <!-- 13 · FORMULA IMMAGINI -->
+      <section class="slide slide--dark" aria-roledescription="slide">
+        <p class="eyebrow">Prompt design · 4</p>
+        <h2 class="title">Prompt per immagini: la formula</h2>
+        <div class="body">
+          <div class="code">MEDIUM <span class="c-dim">+</span> SUBJECT <span class="c-dim">+</span> DETAILS <span class="c-dim">+</span> PARAMETERS</div>
+          <div class="cols cols-2">
+            <div class="card card--dark">
+              <span class="card__k">Esempio</span>
+              <p class="card__d"><strong>A photorealistic portrait</strong> (medium) <strong>of Frederick the Great</strong> (subject), shot with a Fujifilm camera, shallow focus, telephoto lens, reportage style (details) <strong>--ar 3:4</strong> (parameters).</p>
+            </div>
+            <ul class="ticks">
+              <li><strong>Medium/tecnica:</strong> 3D render, foto commerciale, illustrazione…</li>
+              <li><strong>Lente/camera/luce:</strong> wide-angle, naturale…</li>
+              <li><strong>Palette &amp; stile:</strong> monocromatico, editoriale…</li>
+              <li><strong>Parametri:</strong> aspect ratio, seed, qualità</li>
+            </ul>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Sara</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Sara · ~3 min</b> — Fonte: “Prompts for visual content” (TAG). Questa formula torna nella Lezione 2 con Midjourney/DALL·E.</div></aside>
+      </section>
+
+      <!-- 14 · BAD vs GOOD -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Prompt design · 5</p>
+        <h2 class="title">Stesso obiettivo, due prompt</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <div class="prompt-bad"><b>Vago</b>“Fammi una landing page bella.”<br><span class="micro">→ Ottieni qualcosa di generico che non c'entra col brief.</span></div>
+            <div class="prompt-good"><b>Efficace</b>“Agisci come UX writer. Scrivi l'hero di una landing per un gestionale HR rivolto a PMI. Tono: rassicurante, concreto. Output: 1 headline (max 8 parole) + 1 sottotitolo (max 20) + 3 bullet di beneficio.”</div>
+          </div>
+          <p class="lead">La differenza non è “magia”: è <em class="hl">ruolo + contesto + vincoli + formato</em>. Le stesse cose che chiediamo a un brief umano.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Sara</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Sara · ~2,5 min</b> — Se c'è un proiettore + chat aperta, prova i due prompt dal vivo. Poi passa a Caterina per il quiz.</div></aside>
+      </section>
+
+      <!-- 15 · QUIZ 2 -->
+      <section class="slide slide--divider" aria-roledescription="slide">
+        <p class="eyebrow">Quiz Kahoot · #2</p>
+        <h2 class="title">Qual è il prompt più efficace?</h2>
+        <div class="quiz">
+          <ul class="quiz__opts" style="list-style:none;padding:0;margin:0">
+            <li class="quiz__opt"><b>A</b> “Fai una cosa carina”</li>
+            <li class="quiz__opt"><b>B</b> “Immagine bella, grazie <span aria-hidden='true'>🙏</span>”</li>
+            <li class="quiz__opt quiz__opt--right"><b>C</b> Ruolo + contesto + formato + vincoli <span class="quiz__tag">✓ Corretto</span></li>
+            <li class="quiz__opt"><b>D</b> “Sorprendimi” (e speri)</li>
+          </ul>
+          <div class="card card--dark center">
+            <span class="card__k" style="color:var(--c-blue-300)">Rispondi ora</span>
+            <p class="card__t" style="color:#fff">Kahoot</p>
+            <p class="card__d">[QR / PIN partita Kahoot — inserire prima dell'aula]</p>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Conduce: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~2 min</b> — “D è il mio preferito quando ho fretta e voglio soffrire.” Rivela C. Rilancia sull'etica: “ma se non diciamo nulla, cosa decide l'AI al posto nostro?”.</div></aside>
+      </section>
+
+      <!-- 16 · ETICA & INCLUSIVE -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">AI etica &amp; inclusiva</p>
+        <h2 class="title">Il bias è nei dati. L'output lo scegli tu.</h2>
+        <div class="body">
+          <div class="cols cols-2-1">
+            <div class="stack">
+              <ul class="ticks">
+                <li>I modelli imparano dai dati: <strong>i bias sono già lì dentro</strong>.</li>
+                <li>Non possiamo cambiare i dati, ma <strong>possiamo cambiare il risultato con il prompt</strong>.</li>
+                <li>Prompt inclusivo = descrivi esplicitamente <strong>diversità</strong> (età, corpi, etnie, abilità) invece di lasciare “il default”.</li>
+              </ul>
+              <div class="card card--tint">
+                <span class="card__k">Caso · Dove — “Real Beauty Prompt Playbook”</span>
+                <p class="card__d">Guida per generare immagini di bellezza reale e diversa con la GenAI. Se non specifichi, il “default” del modello tende a stereotipi ristretti e sovra-idealizzati.</p>
+              </div>
+            </div>
+            <div class="stat"><span class="stat__n">1&nbsp;su&nbsp;3</span><span class="stat__u">donne e ragazze</span><span class="stat__d">sente pressione ad alterare il proprio aspetto per ciò che vede online (Dove Global State of Beauty Report).</span></div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Relatore: Gaia</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Gaia · ~4 min</b> — Fonte: Dove Real Beauty Prompt Playbook (cartella /etica). Messaggio forte e non moralista: “inclusività = specificità”. <b>[Integrare 1 esempio prompt inclusivo vostro]</b>.</div></aside>
+      </section>
+
+      <!-- 17 · RECAP -->
+      <section class="slide slide--tint" aria-roledescription="slide">
+        <p class="eyebrow">Recap</p>
+        <h2 class="title">Cosa portiamo a casa</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <ul class="ticks ok">
+              <li>AI ⊃ GenAI ⊃ prompt: sappiamo dove siamo.</li>
+              <li>È probabilistica: co-pilota, non oracolo.</li>
+              <li>Dai testo strutturato (Markdown &gt; screenshot).</li>
+            </ul>
+            <ul class="ticks ok">
+              <li>Prompt = ruolo + contesto + formato + vincoli.</li>
+              <li>Immagini: MEDIUM + SUBJECT + DETAILS + PARAMETERS.</li>
+              <li>Inclusività = specificità. Verifica sempre.</li>
+            </ul>
+          </div>
+          <p class="lead"><strong>Compito per la prossima:</strong> iniziate una <em class="hl">libreria di prompt</em> condivisa del team. Nella Lezione 2 la riempiamo di strumenti.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Anchor: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~2 min</b> — Recap veloce a voce alta, coinvolgi la sala (“ditemi una cosa che vi portate a casa”).</div></aside>
+      </section>
+
+      <!-- 18 · FEEDBACK -->
+      <section class="slide slide--cover" aria-roledescription="slide">
+        <p class="eyebrow">Grazie!</p>
+        <h2 class="title">Un minuto di feedback?</h2>
+        <div class="quiz">
+          <div class="stack">
+            <p class="lead">Il vostro feedback decide la Lezione 2. Cosa ha funzionato, cosa taglieremmo, quali strumenti volete vedere.</p>
+            <a class="linkbtn" href="https://docs.google.com/forms/d/e/1FAIpQLSeJZTftegDq98JXNZtkZJasJVOiVf8oY_5TCxx2qYzQPAw2Sw/viewform">Apri il modulo di feedback (Google Form) →</a>
+          </div>
+          <div class="qr">
+            <img src="../assets/qr-feedback.svg" alt="Codice QR per aprire il modulo di feedback su Google Form">
+            <p class="qr__c">Inquadra il QR o usa il link qui accanto</p>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 1</span><span class="who">Anchor: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~1,5 min</b> — Tieni la slide su mentre escono. Ripeti il link a voce. Ringrazia i 3 relatori per nome.</div></aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Chrome del deck -->
+  <nav class="deck-bar" aria-label="Controlli presentazione">
+    <strong>AI per Designer</strong> · L1 Fondamenti
+    <span class="spacer"></span>
+    <span class="legenda">N note · F schermo intero</span>
+    <button id="prev" type="button">← Indietro</button>
+    <span class="count" id="count">1 / 18</span>
+    <button id="next" type="button">Avanti →</button>
+    <button id="notes" type="button">Note</button>
+    <button id="fs" type="button">⛶ Full</button>
+    <a href="../index.html">Hub</a>
+  </nav>
+
+  <script src="../assets/deck.js"></script>
+</body>
+</html>

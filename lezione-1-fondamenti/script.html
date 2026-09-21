@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Script oratori — Lezione 1: Fondamentali &amp; Prompt Design</title>
+  <link rel="stylesheet" href="../assets/jakala.css">
+  <style>
+    body { background: var(--c-ink-050); color: var(--c-ink-800); }
+    .doc { max-width: 900px; margin: 0 auto; padding: clamp(24px,5vw,64px) var(--s-6) 96px; }
+    .doc h1 { font-size: clamp(30px,5vw,48px); letter-spacing:-.02em; margin:0 0 6px; }
+    .doc .meta { color: var(--c-ink-600); font-size:16px; margin:0 0 4px; }
+    .kicker { display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--c-blue-600); }
+    .kicker::before { content:""; width:9px;height:9px;border-radius:999px;background:var(--c-blue-500);box-shadow:0 0 0 4px var(--c-blue-100); }
+    .runsheet { width:100%; border-collapse:collapse; margin:24px 0 8px; font-size:14px; }
+    .runsheet th { text-align:left; text-transform:uppercase; letter-spacing:.06em; font-size:11px; color:var(--c-ink-500); border-bottom:2px solid var(--c-ink-200); padding:8px 10px; }
+    .runsheet td { padding:8px 10px; border-bottom:1px solid var(--c-ink-200); vertical-align:top; }
+    .runsheet .t { font-variant-numeric:tabular-nums; font-weight:800; white-space:nowrap; }
+    .who-chip { display:inline-block; font-weight:800; font-size:12px; padding:2px 8px; border-radius:999px; }
+    .c-cate { background:#e4e9ff; color:#12269a; } .c-gaia { background:#e4f6ec; color:#0a6e3d; }
+    .c-albe { background:#fdf1dc; color:#8a5600; } .c-sara { background:#ffe0ea; color:#b3134d; }
+    .block { background:#fff; border:1px solid var(--c-ink-200); border-radius:16px; padding:24px 28px; margin:18px 0; box-shadow:var(--sh-1); }
+    .block h2 { font-size:22px; margin:0 0 4px; letter-spacing:-.01em; }
+    .block .sub { color:var(--c-ink-500); font-size:13px; margin:0 0 14px; font-weight:700; }
+    .say { border-left:3px solid var(--c-blue-400); padding:4px 0 4px 16px; margin:12px 0; color:var(--c-ink-800); }
+    .say em { color:var(--c-ink-500); font-style:normal; }
+    .cue { background:var(--c-blue-050); border:1px dashed var(--c-blue-300); border-radius:10px; padding:10px 14px; font-size:14px; margin-top:12px; }
+    .cue b { color:var(--c-blue-700); }
+    .tag { display:inline-block; font-size:11px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; padding:3px 9px; border-radius:999px; background:var(--c-mag-100); color:var(--c-mag-700); margin-bottom:8px; }
+    .todo { background:#fdf1dc; border:1px solid #eccf96; border-radius:10px; padding:10px 14px; font-size:14px; color:#7a4d00; }
+    ul.tight { margin:8px 0; padding-left:20px; } ul.tight li { margin:4px 0; }
+    @media print { body{background:#fff;} .block{box-shadow:none; break-inside:avoid;} .doc{padding:0;} }
+  </style>
+</head>
+<body>
+  <main class="doc">
+    <p class="kicker">Jakala · Script oratori</p>
+    <h1>Lezione 1 — Fondamentali &amp; Prompt Design</h1>
+    <p class="meta"><strong>Durata:</strong> ~60 min (55 + 5 di Q&amp;A) · <strong>Oratori:</strong> Caterina (anchor), Gaia, Alberto, Sara.</p>
+    <p class="meta"><strong>Tono:</strong> business casual, chiaro, un po' ironico. Le battute sono suggerimenti: adattatele a voi.</p>
+    <div class="todo" style="margin-top:16px"><strong>Da preparare prima dell'aula:</strong> partita Kahoot (2 domande) + PIN/QR · verifica cifre energia (slide 7) · 1 esempio di prompt inclusivo vostro (slide 16).</div>
+
+    <table class="runsheet">
+      <thead><tr><th>Tempo</th><th>Slide</th><th>Chi</th><th>Cosa</th></tr></thead>
+      <tbody>
+        <tr><td class="t">0:00</td><td>1–2</td><td><span class="who-chip c-cate">Caterina</span></td><td>Apertura, patto d'aula, agenda</td></tr>
+        <tr><td class="t">3:00</td><td>3–6</td><td><span class="who-chip c-gaia">Gaia</span></td><td>Le varie AI: definizioni, mappa, timeline, “come pensa”</td></tr>
+        <tr><td class="t">15:00</td><td>7–8</td><td><span class="who-chip c-albe">Alberto</span></td><td>Consumo energetico + come l'AI legge i file</td></tr>
+        <tr><td class="t">22:00</td><td>9</td><td><span class="who-chip c-albe">Alberto</span></td><td>Quiz Kahoot #1 — “Cos'è l'MD?”</td></tr>
+        <tr><td class="t">25:00</td><td>10–14</td><td><span class="who-chip c-sara">Sara</span></td><td>Prompt design: mindset, 4 tipi, regole, formula immagini, bad/good</td></tr>
+        <tr><td class="t">40:00</td><td>15</td><td><span class="who-chip c-cate">Caterina</span></td><td>Quiz Kahoot #2 — “Il prompt più efficace”</td></tr>
+        <tr><td class="t">43:00</td><td>16</td><td><span class="who-chip c-gaia">Gaia</span></td><td>AI etica &amp; inclusiva (caso Dove)</td></tr>
+        <tr><td class="t">49:00</td><td>17</td><td><span class="who-chip c-cate">Caterina</span></td><td>Recap + compito (libreria prompt)</td></tr>
+        <tr><td class="t">52:00</td><td>18</td><td><span class="who-chip c-cate">Caterina</span></td><td>Feedback (QR + Google Form) + Q&amp;A</td></tr>
+      </tbody>
+    </table>
+
+    <!-- BLOCCO 1 -->
+    <div class="block">
+      <h2>0:00 · Apertura</h2>
+      <p class="sub">Slide 1–2 · Caterina · ~3 min</p>
+      <div class="say">“Buongiorno! Oggi facciamo una cosa semplice: smontiamo l'AI come smontiamo un layout — livello per livello. Alla fine non sarete data scientist, ma saprete <strong>parlarle bene</strong> e capire quando fidarvi. E ci divertiamo un po', promesso.”</div>
+      <div class="say"><em>(Presenta i 4)</em> “Ci alterniamo in quattro: io faccio da filo conduttore, Gaia ci spiega cos'è davvero questa AI, Alberto ci fa i conti in tasca — anche in senso energetico — e Sara ci insegna a scrivere prompt che funzionano.”</div>
+      <div class="say"><em>(Patto d'aula, slide 2)</em> “Regola: domande quando volete. Non esistono domande stupide, solo prompt migliorabili.”</div>
+      <div class="cue"><b>Cue →</b> “Gaia, partiamo dalle basi: cos'è l'AI, e perché ‘AI' e ‘ChatGPT' non sono la stessa cosa?”</div>
+    </div>
+
+    <!-- BLOCCO 2 -->
+    <div class="block">
+      <h2>3:00 · Le varie AI</h2>
+      <p class="sub">Slide 3–6 · Gaia · ~12 min</p>
+      <div class="say"><strong>(Slide 3)</strong> “Tre parole che tutti usano come sinonimi ma non lo sono. <strong>AI</strong> è l'ombrello: macchine che imparano e decidono. <strong>Generative AI</strong> è un pezzo dell'ombrello: crea contenuti nuovi. E il <strong>prompt design</strong> è quello che facciamo noi: guidarla. Più stringiamo il cerchio, più conta come scriviamo.”</div>
+      <div class="say"><strong>(Slide 4)</strong> “La famiglia allargata in 30 secondi: machine learning impara dagli esempi, la computer vision ‘legge un layout', gli LLM sono i motori delle chat, il multimodale mette tutto insieme, e gli agenti non rispondono soltanto: <strong>agiscono</strong>.”</div>
+      <div class="say"><strong>(Slide 5)</strong> “In tre anni è passata da giocattolo a collega. Battuta: nel 2022 completava le frasi, oggi completa i task. Per noi il punto è che l'interfaccia diventa adattiva: progettiamo comportamenti, non solo schermate.”</div>
+      <div class="say"><strong>(Slide 6)</strong> “Ultima cosa, la più importante: <strong>non è una calcolatrice</strong>. È probabilistica. Stesso prompt, risposte diverse. A volte inventa con grande sicurezza. Quindi: co-pilota, non oracolo. Si verifica sempre.”</div>
+      <div class="cue"><b>Cue →</b> “Tutta questa potenza però costa. Alberto, quanto pesa davvero una richiesta?”</div>
+    </div>
+
+    <!-- BLOCCO 3 -->
+    <div class="block">
+      <h2>15:00 · Energia &amp; file</h2>
+      <p class="sub">Slide 7–8 · Alberto · ~7 min</p>
+      <div class="say"><strong>(Slide 7)</strong> “Un prompt di testo costa più o meno come qualche secondo di TV: pochissimo, da solo. Ma un'immagine costa circa dieci volte tanto, e un video ordini di grandezza in più. Non ve lo dico per farvi sentire in colpa quando generate un gattino: ve lo dico per <strong>scegliere con criterio</strong>. Testo quando basta, immagini e video quando servono davvero.”</div>
+      <div class="todo">⚠️ <strong>[DA AGGIORNARE]</strong> Le cifre sono indicative (report Google 2025 sull'energia di Gemini). Verificare l'ultima fonte prima dell'aula; in dubbio, restare sugli ordini di grandezza.</div>
+      <div class="say"><strong>(Slide 8)</strong> “Come legge i nostri file? Il <strong>PDF</strong>: estrae il testo bene, ma può perdere l'impaginazione. Un <strong>JPEG o PNG</strong>: lo ‘vede', descrive, legge anche il testo dentro. E poi c'è il <strong>Markdown</strong>… che ci porta dritti al quiz.”</div>
+      <div class="cue"><b>Cue →</b> <em>(Non spiegare cos'è il Markdown: lancia il quiz.)</em> “Prima di dirvi cos'è, voglio vedere se lo sapete. Telefoni alla mano.”</div>
+    </div>
+
+    <!-- QUIZ 1 -->
+    <div class="block">
+      <span class="tag">Quiz Kahoot #1</span>
+      <h2>22:00 · “Cos'è l'MD?”</h2>
+      <p class="sub">Slide 9 · Alberto conduce · ~3 min</p>
+      <ul class="tight">
+        <li>A) Una droga sintetica · B) Il discount della spesa · <strong>C) Un file: Markdown ✓</strong> · D) “Medical Doctor”</li>
+      </ul>
+      <div class="say">“20 secondi di suspense… <em>(rivela)</em> è la C: <strong>Markdown</strong>. Un modo super-leggero di scrivere testo strutturato — titoli, liste — che le AI adorano perché è pulito e costa pochi token. Se avete risposto A, ci vediamo dopo la lezione.”</div>
+      <div class="cue"><b>Cue →</b> “Ora sappiamo cos'è. Sara, insegnaci a <strong>parlarle</strong>.”</div>
+    </div>
+
+    <!-- BLOCCO 5 -->
+    <div class="block">
+      <h2>25:00 · Prompt design</h2>
+      <p class="sub">Slide 10–14 · Sara · ~15 min</p>
+      <div class="say"><strong>(Slide 10 — mindset)</strong> “Prima della tecnica, la testa. Tre mosse: definisci l'obiettivo, <strong>itera</strong> — il primo output è una bozza — e verifica. L'AI è un co-pilota che amplifica voi, non un sostituto.”</div>
+      <div class="say"><strong>(Slide 11 — 4 tipi)</strong> “Quattro tipi di prompt: informativo, generativo, analitico e — il nostro preferito — <strong>role-based</strong>. Esempio dal vivo: ‘Agisci come un utente 65enne poco digitale e critica questo flusso'. Ecco a cosa serve davvero.”</div>
+      <div class="say"><strong>(Slide 12 — regole)</strong> “Le regole d'oro stanno in tre parole: <strong>ruolo, contesto, formato</strong>. Aggiungete esempi (few-shot) e spezzate i task complessi in passi (chained). E costruitevi una libreria di prompt.”</div>
+      <div class="say"><strong>(Slide 13 — immagini)</strong> “Per le immagini c'è una formula: <strong>MEDIUM + SUBJECT + DETAILS + PARAMETERS</strong>. Medium ‘ritratto fotorealistico', subject ‘Federico il Grande', details ‘teleobiettivo, stile reportage', parameters ‘--ar 3:4'. La ritroviamo la prossima volta con Midjourney.”</div>
+      <div class="say"><strong>(Slide 14 — bad/good)</strong> “Guardate la differenza. ‘Fammi una landing bella' vs un prompt con ruolo, contesto, vincoli e formato. Non è magia: sono le stesse cose che chiediamo a un brief umano.”</div>
+      <div class="cue"><b>Cue →</b> “Caterina, secondo quiz: mettiamoli alla prova.”</div>
+    </div>
+
+    <!-- QUIZ 2 -->
+    <div class="block">
+      <span class="tag">Quiz Kahoot #2</span>
+      <h2>40:00 · “Il prompt più efficace”</h2>
+      <p class="sub">Slide 15 · Caterina conduce · ~3 min</p>
+      <ul class="tight"><li>A) “Fai una cosa carina” · B) “Immagine bella, grazie” · <strong>C) Ruolo + contesto + formato + vincoli ✓</strong> · D) “Sorprendimi”</li></ul>
+      <div class="say">“La D è il mio preferito quando ho fretta e voglio soffrire. La risposta giusta è la <strong>C</strong>. <em>(rilancio)</em> E se non specifichiamo nulla… chi decide al posto nostro? I dati. Gaia, parliamone.”</div>
+    </div>
+
+    <!-- BLOCCO 7 -->
+    <div class="block">
+      <h2>43:00 · AI etica &amp; inclusiva</h2>
+      <p class="sub">Slide 16 · Gaia · ~6 min</p>
+      <div class="say">“Il bias non è un bug esotico: è già dentro i dati. La buona notizia? Non possiamo cambiare i dati, ma possiamo cambiare l'<strong>output</strong> — con il prompt. Inclusività, in pratica, vuol dire <strong>specificità</strong>: se non descrivi diversità di età, corpi, etnie, abilità, il modello usa il suo ‘default', che tende a stereotipi ristretti.”</div>
+      <div class="say">“Caso concreto: Dove ha pubblicato un <strong>Real Beauty Prompt Playbook</strong> per generare immagini di bellezza reale e diversa. Dato che pesa: <strong>1 donna su 3</strong> sente pressione ad alterare il proprio aspetto per ciò che vede online. Quello che generiamo noi finisce in quel flusso.”</div>
+      <div class="todo">➕ <strong>[Integrare]</strong> un esempio di prompt inclusivo vostro (prima/dopo), meglio se su un progetto reale del team.</div>
+      <div class="cue"><b>Cue →</b> “Caterina, chiudiamo.”</div>
+    </div>
+
+    <!-- BLOCCO 8 -->
+    <div class="block">
+      <h2>49:00 · Recap &amp; feedback</h2>
+      <p class="sub">Slide 17–18 · Caterina · ~6 min + Q&amp;A</p>
+      <div class="say"><strong>(Slide 17)</strong> “Riassunto in una riga: sappiamo dove siamo (AI ⊃ GenAI ⊃ prompt), che è probabilistica, che va nutrita di testo strutturato, e che un buon prompt è ruolo + contesto + formato + vincoli. Compito: aprite una <strong>libreria di prompt condivisa</strong>. La prossima volta la riempiamo di strumenti.”</div>
+      <div class="say"><strong>(Slide 18)</strong> “Un minuto di feedback: il vostro parere decide letteralmente la Lezione 2. QR sullo schermo, oppure il link — lo leggo a voce. <em>(Ringrazia Gaia, Alberto, Sara per nome.)</em>”</div>
+      <div class="cue"><b>Q&amp;A →</b> tieni la slide feedback su mentre rispondi alle domande (max 5 min).</div>
+    </div>
+
+  </main>
+</body>
+</html>

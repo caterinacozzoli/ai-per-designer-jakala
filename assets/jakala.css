@@ -1,0 +1,398 @@
+/* ============================================================================
+   AI PER DESIGNER — DESIGN SYSTEM DELLE SLIDE (tema JAKALA)
+   ----------------------------------------------------------------------------
+   Fondo chiaro, quasi-nero editoriale, accento BLU ELETTRICO ("goccia" Jakala)
+   + pop MAGENTA per i momenti "gioco/quiz". Scala 4pt, radius 4/8/16.
+   Conforme WCAG 2.2 AA (contrasti verificati, reduced-motion, focus-visible).
+
+   >>> PER ALLINEARE 1:1 AI TOKEN FIGMA (JAKAALA.fig) <<<
+   1. Figma Desktop → apri JAKAALA.fig
+   2. Plugins → Development → "Figma UI MCP Bridge" → Run
+   3. Dimmi "rileggi Figma": estraggo color/type/spacing reali
+   4. Sostituisco SOLO il blocco :root qui sotto, 1:1. Nient'altro cambia.
+   ========================================================================== */
+
+:root {
+  /* --- BRAND / PRIMARY (blu elettrico "goccia") ------------------------ */
+  --c-blue-900: #071039;
+  --c-blue-800: #0b1a63;
+  --c-blue-700: #12269a;
+  --c-blue-600: #1636cf;   /* eyebrow / testo su bianco (8.5:1) */
+  --c-blue-500: #1b45ff;   /* primary — testo large & UI (6.3:1) */
+  --c-blue-400: #4f70ff;
+  --c-blue-300: #8aa1ff;   /* testo su navy */
+  --c-blue-200: #c1cdff;
+  --c-blue-100: #e4e9ff;
+  --c-blue-050: #f2f5ff;
+
+  /* --- SECONDARY / POP (magenta = SOLO large ≥24px o UI/grafica) ------- */
+  --c-mag-700: #b3134d;   /* testo magenta scuro su mag-100 */
+  --c-mag-500: #ff2e73;   /* accento grafico / numeri large */
+  --c-mag-100: #ffe0ea;
+
+  /* --- NEUTRI (freddi, quasi-neri editoriali) -------------------------- */
+  --c-ink-900: #0a0b12;
+  --c-ink-800: #14161f;   /* body (18:1) */
+  --c-ink-700: #262a37;
+  --c-ink-600: #444a5c;   /* lead / secondario (8.8:1) */
+  --c-ink-500: #6b7183;   /* micro / footer — minimo AA testo (4.9:1) */
+  --c-ink-400: #969cae;   /* SOLO bordi/decor, mai testo informativo */
+  --c-ink-300: #c3c8d4;
+  --c-ink-200: #e0e3ea;
+  --c-ink-100: #eef0f4;
+  --c-ink-050: #f7f8fb;
+  --c-white:   #ffffff;
+
+  /* --- SEMANTICI ------------------------------------------------------- */
+  --c-green:  #0f9d58;  --c-green-bg: #e4f6ec;  --c-green-tx: #0a6e3d;
+  --c-amber:  #b06f00;  --c-amber-bg: #fdf1dc;
+  --c-red:    #d1352b;  --c-red-bg:   #fbe7e5;
+  --c-violet: #6b46e5;  --c-violet-bg:#ece7fd;
+
+  /* --- TIPOGRAFIA -----------------------------------------------------
+     Font brand Jakala swappabile: cambia solo --font-sans. Stack di sistema
+     scelto per resa offline in aula (nessuna dipendenza da CDN). */
+  --font-sans: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-mono: "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  --fs-display: clamp(40px, 5.6vw, 78px);
+  --fs-h1:      clamp(30px, 4.0vw, 55px);
+  --fs-h2:      clamp(24px, 2.8vw, 38px);
+  --fs-h3:      clamp(19px, 1.9vw, 26px);
+  --fs-body:    clamp(15px, 1.35vw, 20px);
+  --fs-small:   clamp(13px, 1.05vw, 16px);
+  --fs-micro:   clamp(11px, 0.85vw, 13px);
+
+  /* --- SPAZIATURE (scala 4pt) ------------------------------------------ */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 88px;
+
+  /* --- FORMA ----------------------------------------------------------- */
+  --r-sm: 4px; --r-md: 8px; --r-lg: 16px; --r-pill: 999px;
+  --bd: 1px solid var(--c-ink-200);
+
+  --sh-1: 0 1px 2px rgba(10,11,18,.06), 0 1px 3px rgba(10,11,18,.05);
+  --sh-2: 0 4px 10px rgba(10,11,18,.07), 0 2px 4px rgba(10,11,18,.05);
+  --sh-3: 0 18px 40px rgba(10,11,18,.14);
+}
+
+/* ============================================================================
+   BASE
+   ========================================================================== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--c-ink-800);
+  background: var(--c-ink-100);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* a11y: testo solo per screen reader */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* a11y: focus visibile su qualsiasi elemento interattivo (ring 6.3:1) */
+:focus-visible { outline: 3px solid var(--c-blue-500); outline-offset: 2px; border-radius: 2px; }
+[tabindex="-1"]:focus { outline: none; } /* focus programmatico su titolo slide: nessun ring */
+
+/* ============================================================================
+   DECK & SLIDE — formato 16:9
+   ========================================================================== */
+.deck { display: block; }
+
+.slide {
+  position: relative;
+  width: min(100vw, calc((100vh - 64px) * 16 / 9));
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  background: var(--c-white);
+  overflow: hidden;
+  display: none;               /* le slide non attive escono dall'albero a11y */
+  flex-direction: column;
+  padding: var(--s-8) var(--s-9) var(--s-7);
+  box-shadow: var(--sh-3);
+}
+.slide.is-active { display: flex; }
+
+/* barra brand in alto (goccia → magenta) */
+.slide::before {
+  content: "";
+  position: absolute; inset: 0 0 auto 0; height: 6px;
+  background: linear-gradient(90deg, var(--c-blue-500) 0%, var(--c-blue-400) 55%, var(--c-mag-500) 100%);
+  z-index: 3;
+}
+
+/* --- varianti di sfondo --- */
+.slide--dark  { background: var(--c-ink-900); color: var(--c-ink-100); }
+.slide--tint  { background: var(--c-blue-050); }
+.slide--cover {
+  background:
+    radial-gradient(120% 90% at 82% 18%, rgba(27,69,255,.55) 0%, rgba(27,69,255,0) 55%),
+    radial-gradient(90% 80% at 12% 92%, rgba(255,46,115,.35) 0%, rgba(255,46,115,0) 50%),
+    linear-gradient(150deg, #060a1f 0%, #0b1440 60%, #12269a 100%);
+  color: var(--c-white); justify-content: center;
+}
+.slide--divider {
+  background: linear-gradient(150deg, var(--c-ink-900) 0%, var(--c-blue-900) 100%);
+  color: var(--c-white); justify-content: center;
+}
+
+/* ============================================================================
+   TIPOGRAFIA DI SLIDE
+   ========================================================================== */
+.eyebrow {
+  font-size: var(--fs-micro);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--c-blue-600);
+  margin: 0 0 var(--s-3);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.eyebrow::before {                      /* la "goccia" blu */
+  content: ""; width: 9px; height: 9px; border-radius: 999px;
+  background: var(--c-blue-500); flex: none;
+  box-shadow: 0 0 0 4px var(--c-blue-100);
+}
+.slide--dark .eyebrow, .slide--cover .eyebrow, .slide--divider .eyebrow { color: var(--c-blue-300); }
+.slide--dark .eyebrow::before, .slide--cover .eyebrow::before, .slide--divider .eyebrow::before {
+  background: var(--c-blue-400); box-shadow: 0 0 0 4px rgba(79,112,255,.25);
+}
+
+h1.display { font-size: var(--fs-display); line-height: 1.0; letter-spacing: -.03em; font-weight: 800; margin: 0 0 var(--s-4); }
+h2.title   { font-size: var(--fs-h1); line-height: 1.06; letter-spacing: -.02em; font-weight: 800; margin: 0 0 var(--s-5); }
+h3.sub     { font-size: var(--fs-h3); line-height: 1.28; font-weight: 700; margin: 0 0 var(--s-3); color: var(--c-ink-700); }
+.slide--dark h3.sub, .slide--cover h3.sub, .slide--divider h3.sub { color: var(--c-blue-200); }
+
+p, li { font-size: var(--fs-body); line-height: 1.55; }
+.lead { font-size: var(--fs-h3); line-height: 1.4; color: var(--c-ink-600); max-width: 64ch; }
+.slide--cover .lead, .slide--divider .lead, .slide--dark .lead { color: var(--c-blue-200); }
+.small { font-size: var(--fs-small); color: var(--c-ink-600); }
+.micro { font-size: var(--fs-micro); color: var(--c-ink-500); }
+strong { font-weight: 700; color: var(--c-ink-900); }
+.slide--dark strong, .slide--cover strong, .slide--divider strong { color: var(--c-white); }
+em.hl { font-style: normal; background: linear-gradient(transparent 60%, var(--c-blue-200) 60%); padding: 0 2px; }
+em.hl-m { font-style: normal; background: linear-gradient(transparent 60%, var(--c-mag-100) 60%); padding: 0 2px; }
+
+.body { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: var(--s-5); }
+
+/* ============================================================================
+   LAYOUT UTILITY
+   ========================================================================== */
+.cols      { display: grid; gap: var(--s-5); }
+.cols-2    { grid-template-columns: 1fr 1fr; }
+.cols-3    { grid-template-columns: repeat(3, 1fr); }
+.cols-4    { grid-template-columns: repeat(4, 1fr); }
+.cols-2-1  { grid-template-columns: 2fr 1fr; }
+.cols-1-2  { grid-template-columns: 1fr 2fr; }
+.stack     { display: flex; flex-direction: column; gap: var(--s-3); }
+.row       { display: flex; gap: var(--s-4); align-items: center; flex-wrap: wrap; }
+.center    { justify-content: center; align-items: center; text-align: center; }
+.mt-auto   { margin-top: auto; }
+.gap-6     { gap: var(--s-6); }
+
+/* ============================================================================
+   COMPONENTI
+   ========================================================================== */
+.card {
+  background: var(--c-white);
+  border: var(--bd);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  box-shadow: var(--sh-1);
+  display: flex; flex-direction: column; gap: var(--s-2);
+}
+.card--tint { background: var(--c-blue-050); border-color: var(--c-blue-200); }
+.card--mag  { background: var(--c-mag-100); border-color: #ffc2d6; }
+.card--flat { box-shadow: none; }
+.card--dark { background: var(--c-ink-800); border-color: var(--c-ink-700); color: var(--c-ink-100); }
+.card__k { font-size: var(--fs-micro); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--c-blue-600); }
+.card__t { font-size: var(--fs-h3); font-weight: 800; line-height: 1.15; margin: 0; letter-spacing: -.01em; }
+.card__d { font-size: var(--fs-small); color: var(--c-ink-600); margin: 0; line-height: 1.5; }
+.card--dark .card__d { color: var(--c-ink-300); }
+.card__icon { font-size: 32px; line-height: 1; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: var(--fs-micro); font-weight: 800; letter-spacing: .04em;
+  padding: 4px 10px; border-radius: var(--r-pill);
+  background: var(--c-blue-100); color: var(--c-blue-700);
+}
+.badge--ok   { background: var(--c-green-bg); color: var(--c-green-tx); }
+.badge--warn { background: var(--c-amber-bg); color: var(--c-amber); }
+.badge--no   { background: var(--c-red-bg);   color: var(--c-red); }
+.badge--mag  { background: var(--c-mag-100);  color: var(--c-mag-700); }
+.badge--alt  { background: var(--c-violet-bg); color: var(--c-violet); }
+
+.stat { display: flex; flex-direction: column; gap: var(--s-1); }
+.stat__n { font-size: clamp(42px, 6.6vw, 96px); font-weight: 800; letter-spacing: -.04em; line-height: .9; color: var(--c-blue-600); }
+.stat--mag .stat__n { color: var(--c-mag-500); }   /* magenta OK: numero large */
+.slide--dark .stat__n, .slide--cover .stat__n { color: var(--c-blue-300); }
+.stat__u { font-size: var(--fs-h3); font-weight: 700; color: var(--c-ink-700); }
+.slide--dark .stat__u, .slide--cover .stat__u { color: var(--c-blue-200); }
+.stat__d { font-size: var(--fs-small); color: var(--c-ink-500); }
+
+table.tbl { width: 100%; border-collapse: collapse; font-size: var(--fs-small); }
+table.tbl th {
+  text-align: left; font-size: var(--fs-micro); text-transform: uppercase;
+  letter-spacing: .08em; color: var(--c-ink-500); font-weight: 800;
+  padding: var(--s-2) var(--s-3); border-bottom: 2px solid var(--c-ink-200);
+}
+table.tbl td { padding: var(--s-3); border-bottom: 1px solid var(--c-ink-100); vertical-align: top; }
+table.tbl tr:last-child td { border-bottom: none; }
+table.tbl tbody tr:nth-child(even) { background: var(--c-ink-050); }
+table.tbl .num { font-variant-numeric: tabular-nums; }
+
+ul.ticks { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--s-3); }
+ul.ticks li { position: relative; padding-left: 30px; }
+ul.ticks li::before {
+  content: ""; position: absolute; left: 0; top: .5em;
+  width: 11px; height: 11px; border-radius: 999px; background: var(--c-blue-500);
+}
+ul.ticks.no li::before { background: var(--c-red); border-radius: 3px; }
+ul.ticks.ok li::before { background: var(--c-green); }
+.slide--dark ul.ticks li::before { background: var(--c-blue-400); }
+
+.steps { display: grid; grid-auto-flow: column; gap: var(--s-4); }
+.step { border-top: 3px solid var(--c-blue-400); padding-top: var(--s-3); }
+.step__n { font-size: var(--fs-micro); font-weight: 800; color: var(--c-blue-600); letter-spacing: .1em; }
+.step__t { font-size: var(--fs-small); font-weight: 800; margin: 4px 0 2px; }
+.step__d { font-size: var(--fs-micro); color: var(--c-ink-600); line-height: 1.45; }
+
+/* --- Blocchi prompt / codice --- */
+.code {
+  font-family: var(--font-mono); font-size: var(--fs-small); line-height: 1.6;
+  background: var(--c-ink-900); color: #d7e3ec;
+  border-radius: var(--r-md); padding: var(--s-4); white-space: pre-wrap;
+  overflow: auto;
+}
+.code .c-key { color: var(--c-blue-300); font-weight: 700; }
+.code .c-dim { color: var(--c-ink-400); }
+.prompt-bad, .prompt-good {
+  border-radius: var(--r-md); padding: var(--s-4); font-size: var(--fs-small); line-height: 1.5;
+  border-left: 4px solid;
+}
+.prompt-bad  { background: var(--c-red-bg);   border-color: var(--c-red); }
+.prompt-good { background: var(--c-green-bg); border-color: var(--c-green); }
+.prompt-bad b, .prompt-good b { display:block; font-size: var(--fs-micro); text-transform: uppercase; letter-spacing:.08em; margin-bottom: 6px; }
+.prompt-bad b  { color: var(--c-red); }
+.prompt-good b { color: var(--c-green-tx); }
+
+/* --- Quiz / QR --- */
+.quiz { display: grid; grid-template-columns: 1fr 340px; gap: var(--s-7); align-items: center; flex: 1; }
+.quiz--full { grid-template-columns: 1fr; }
+.quiz__opts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+.quiz__opt {
+  display: flex; gap: var(--s-3); align-items: center;
+  background: var(--c-white); border: 2px solid var(--c-ink-200);
+  border-radius: var(--r-md); padding: var(--s-3) var(--s-4);
+  font-size: var(--fs-body); font-weight: 600; color: var(--c-ink-800);
+}
+.quiz__opt b {
+  flex: none; width: 32px; height: 32px; border-radius: var(--r-sm);
+  background: var(--c-blue-100); color: var(--c-blue-700);
+  display: grid; place-items: center; font-size: var(--fs-small);
+}
+.quiz__tag { margin-left: auto; font-size: var(--fs-micro); font-weight: 800; letter-spacing: .04em; white-space: nowrap; }
+/* color-not-only: la risposta corretta ha bordo verde + testo "✓ Corretto" (non solo colore) */
+.quiz__opt--right { border-color: var(--c-green); background: var(--c-green-bg); }
+.quiz__opt--right b { background: var(--c-green); color: #fff; }
+.quiz__opt--right .quiz__tag { color: var(--c-green-tx); }
+
+.qr {
+  background: var(--c-white); border: var(--bd); border-radius: var(--r-lg);
+  padding: var(--s-4); text-align: center; box-shadow: var(--sh-2);
+}
+.qr img, .qr svg { width: 100%; height: auto; display: block; }
+.qr__c { font-size: var(--fs-micro); color: var(--c-ink-500); margin-top: var(--s-2); }
+.linkbtn {
+  display: inline-block; margin-top: var(--s-3);
+  font-size: var(--fs-small); font-weight: 800; color: var(--c-blue-600);
+  text-decoration: underline; text-underline-offset: 3px; word-break: break-all;
+}
+.slide--dark .linkbtn, .slide--cover .linkbtn { color: var(--c-blue-200); }
+
+/* --- Note di regia (toggle con N) --- */
+.notes {
+  display: none;
+  position: absolute; left: 0; right: 0; bottom: 0;
+  background: var(--c-ink-900); color: var(--c-ink-200);
+  padding: var(--s-4) var(--s-9);
+  font-size: 13px; line-height: 1.5;
+  border-top: 3px solid var(--c-blue-400);
+  max-height: 44%; overflow: auto; z-index: 4;
+}
+body.show-notes .slide.is-active .notes { display: block; }
+.notes b { color: var(--c-blue-300); }
+.notes .n-sec { margin-bottom: 6px; }
+
+/* --- Footer slide --- */
+.foot {
+  position: absolute; left: var(--s-9); right: var(--s-9); bottom: var(--s-5);
+  display: flex; justify-content: space-between; align-items: center; gap: var(--s-3);
+  font-size: var(--fs-micro); color: var(--c-ink-500);   /* AA: 4.9:1, era ink-400 (FAIL) */
+  border-top: 1px solid var(--c-ink-200); padding-top: var(--s-3);
+}
+.foot .who { color: var(--c-blue-600); font-weight: 800; }
+.slide--dark .foot, .slide--cover .foot, .slide--divider .foot { color: var(--c-blue-200); border-color: rgba(255,255,255,.18); }
+.slide--dark .foot .who, .slide--cover .foot .who, .slide--divider .foot .who { color: #fff; }
+
+/* --- Chrome del deck --- */
+.deck-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; height: 52px;
+  background: var(--c-white); border-top: var(--bd);
+  display: flex; align-items: center; gap: var(--s-4);
+  padding: 0 var(--s-5); font-size: 13px; color: var(--c-ink-600); z-index: 50;
+}
+.deck-bar strong { color: var(--c-ink-900); }
+.deck-bar button {
+  font: inherit; font-weight: 700; cursor: pointer;
+  background: var(--c-ink-100); border: var(--bd); color: var(--c-ink-700);
+  border-radius: var(--r-sm); padding: 6px 12px;
+}
+.deck-bar button:hover { background: var(--c-blue-100); border-color: var(--c-blue-300); color: var(--c-blue-700); }
+.deck-bar .spacer { flex: 1; }
+.deck-bar .legend { color: var(--c-ink-500); font-size: 12px; }
+.deck-bar .count { font-variant-numeric: tabular-nums; font-weight: 800; color: var(--c-ink-900); }
+.deck-bar a { color: var(--c-ink-600); text-decoration: none; font-weight: 700; }
+.deck-bar a:hover { color: var(--c-blue-600); }
+.progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--c-blue-500); z-index: 60; transition: width .2s ease; }
+
+.deck-stage { min-height: 100vh; display: grid; place-items: center; padding-bottom: 52px; }
+
+kbd {
+  font-family: var(--font-mono); font-size: 11px; background: var(--c-ink-100);
+  border: 1px solid var(--c-ink-300); border-bottom-width: 2px;
+  border-radius: 3px; padding: 1px 5px; color: var(--c-ink-700);
+}
+
+/* ============================================================================
+   REDUCED MOTION — rispetta prefers-reduced-motion (a11y)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .slide, .slide * { transform: none !important; }
+}
+
+/* ============================================================================
+   STAMPA / EXPORT PDF  →  Cmd+P, "Salva come PDF", orizzontale, no margini
+   Tutte le slide visibili, in ordine DOM = ordine di lettura.
+   ========================================================================== */
+@media print {
+  @page { size: 297mm 167mm; margin: 0; }
+  body { background: #fff; }
+  .deck-bar, .progress { display: none !important; }
+  .deck-stage { display: block; padding: 0; }
+  .slide {
+    display: flex !important;
+    width: 297mm; height: 167mm; aspect-ratio: auto;
+    box-shadow: none; page-break-after: always; break-after: page;
+    padding: 14mm 18mm 12mm;
+  }
+  .notes { display: none !important; }
+}

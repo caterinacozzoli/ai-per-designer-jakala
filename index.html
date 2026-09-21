@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI per Designer — Hub del corso · Jakala</title>
+  <link rel="stylesheet" href="assets/jakala.css">
+  <style>
+    body { background: var(--c-ink-900); color: var(--c-ink-100); min-height: 100vh; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: clamp(32px, 6vw, 88px) var(--s-6); }
+    .hero-k { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color: var(--c-blue-300); margin:0 0 18px; }
+    .hero-k::before { content:""; width:10px; height:10px; border-radius:999px; background: var(--c-blue-400); box-shadow:0 0 0 4px rgba(79,112,255,.25); }
+    h1 { font-size: clamp(40px, 7vw, 84px); line-height: .98; letter-spacing: -.03em; font-weight: 800; margin: 0 0 16px; }
+    h1 .accent { color: var(--c-blue-400); }
+    .sub { font-size: clamp(18px, 2.2vw, 24px); color: var(--c-blue-200); max-width: 62ch; line-height: 1.4; margin: 0 0 48px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+    .lez {
+      background: var(--c-ink-800); border: 1px solid var(--c-ink-700);
+      border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px;
+      position: relative; overflow: hidden;
+    }
+    .lez::before { content:""; position:absolute; inset:0 0 auto 0; height:5px; background: linear-gradient(90deg, var(--c-blue-500), var(--c-mag-500)); }
+    .lez__n { font-size: 13px; font-weight: 800; letter-spacing:.14em; text-transform:uppercase; color: var(--c-blue-300); }
+    .lez h2 { font-size: 30px; line-height: 1.1; letter-spacing:-.02em; margin: 0; font-weight: 800; }
+    .lez p { color: var(--c-ink-300); font-size: 16px; line-height: 1.55; margin: 0; }
+    .lez__meta { font-size: 13px; color: var(--c-ink-400); }
+    .lez__links { display: flex; gap: 12px; margin-top: auto; padding-top: 8px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; font-size: 15px; font-weight: 800; text-decoration: none;
+      border-radius: 10px; padding: 12px 18px; transition: transform .15s ease;
+    }
+    .btn--slides { background: var(--c-blue-500); color: #fff; }
+    .btn--script { background: transparent; color: var(--c-blue-200); border: 1px solid var(--c-ink-600); }
+    .btn:hover { transform: translateY(-2px); }
+    .foot-note { margin-top: 48px; font-size: 14px; color: var(--c-ink-400); line-height: 1.6; border-top: 1px solid var(--c-ink-700); padding-top: 20px; }
+    .foot-note strong { color: var(--c-blue-200); }
+    .legenda { margin-top: 14px; font-size:13px; color: var(--c-ink-400); }
+    .legenda kbd { background: var(--c-ink-700); border-color: var(--c-ink-600); color: var(--c-ink-200); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="hero-k">Jakala · Formazione interna UX/UI</p>
+    <h1>AI per <span class="accent">Designer</span></h1>
+    <p class="sub">Due sessioni da un'ora per capire l'AI generativa senza magia nera: come funziona, quanto “pesa”, come parlarle bene e quali strumenti usare davvero nel nostro processo di design.</p>
+
+    <div class="grid">
+      <section class="lez">
+        <span class="lez__n">Lezione 1</span>
+        <h2>Fondamentali &amp; Prompt Design</h2>
+        <p>Le varie AI, la timeline, il consumo energetico, come l'AI legge i file (PDF, JPEG, <strong>Markdown</strong>), l'arte del prompt e l'AI etica &amp; inclusiva. Con 2 quiz Kahoot.</p>
+        <p class="lez__meta">60 min · 4 oratori (Caterina anchor · Gaia · Alberto · Sara)</p>
+        <div class="lez__links">
+          <a class="btn btn--slides" href="lezione-1-fondamenti/slides.html">Apri le slide →</a>
+          <a class="btn btn--script" href="lezione-1-fondamenti/script.html">Script oratori</a>
+        </div>
+      </section>
+
+      <section class="lez">
+        <span class="lez__n">Lezione 2</span>
+        <h2>Tool AI &amp; Antigravity</h2>
+        <p>Gli strumenti mappati sul design process (Empathize → Prototype), da ChatGPT e Perplexity a Midjourney, UX Pilot, Claude, Figma AI e Vizcom. Più Antigravity e il designer come “Director”. Con 2 quiz.</p>
+        <p class="lez__meta">60 min · 4 oratori (Caterina anchor · Gaia · Alberto · Sara)</p>
+        <div class="lez__links">
+          <a class="btn btn--slides" href="lezione-2-tool-antigravity/slides.html">Apri le slide →</a>
+          <a class="btn btn--script" href="lezione-2-tool-antigravity/script.html">Script oratori</a>
+        </div>
+      </section>
+    </div>
+
+    <p class="legenda">Durante le slide: <kbd>←</kbd> <kbd>→</kbd> naviga · <kbd>N</kbd> note di regia · <kbd>F</kbd> schermo intero · <kbd>Cmd/Ctrl</kbd>+<kbd>P</kbd> per esportare in PDF.</p>
+
+    <p class="foot-note">
+      <strong>Estetica:</strong> tema Jakala tokenizzato (blu elettrico “goccia” + magenta pop), pronto per lo swap 1:1 con i token reali di <code>JAKAALA.fig</code> via plugin Figma UI MCP Bridge.
+      <br><strong>Feedback:</strong> a fine di ogni lezione il QR rimanda al Google Form (con link testuale visibile per chi non ha la fotocamera a portata).
+    </p>
+  </main>
+</body>
+</html>

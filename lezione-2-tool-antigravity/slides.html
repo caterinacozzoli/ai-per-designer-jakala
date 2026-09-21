@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI per Designer — Lezione 2: Tool AI &amp; Antigravity</title>
+  <link rel="stylesheet" href="../assets/jakala.css">
+</head>
+<body>
+  <div id="live" class="sr-only" aria-live="polite"></div>
+  <div class="progress" id="progress"></div>
+
+  <div class="deck-stage">
+    <div class="deck">
+
+      <!-- 1 · COVER -->
+      <section class="slide slide--cover" aria-roledescription="slide">
+        <p class="eyebrow">Jakala · Formazione UX/UI</p>
+        <h1 class="display">Tool AI &amp; Antigravity</h1>
+        <h3 class="sub">Lezione 2 — Dallo strumento all'esperienza</h3>
+        <p class="lead">Non “l'app magica”, ma gli strumenti giusti per ogni fase del nostro processo di design. E come cambia il mestiere quando l'AI prototipa al posto nostro.</p>
+        <div class="row" style="margin-top:var(--s-6)">
+          <span class="badge">60 minuti</span>
+          <span class="badge badge--mag">4 oratori</span>
+          <span class="badge">Caterina · Gaia · Alberto · Sara</span>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Anchor: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~1,5 min</b> — Richiama la L1: “sappiamo parlarle, ora vediamo con CHI parlare”. Chiedi: “avete aperto la libreria di prompt?”.</div></aside>
+      </section>
+
+      <!-- 2 · AGENDA / COME SCEGLIERE -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Agenda</p>
+        <h2 class="title">Uno strumento non vale l'altro</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <div class="stack">
+              <p class="lead">Oggi non impariamo 12 tool a memoria. Impariamo a <em class="hl">scegliere</em>: qual è il tool giusto per la fase in cui sei.</p>
+              <ul class="ticks">
+                <li>I tool <strong>per fase del design process</strong> (Empathize → Prototype)</li>
+                <li>I tool <strong>dentro Figma</strong> e per il visual (Figma AI, Vizcom, Manus)</li>
+                <li><strong>Antigravity</strong>: il designer diventa “Director”</li>
+                <li>Etica &amp; limiti operativi · 2 quiz · feedback</li>
+              </ul>
+            </div>
+            <div class="card card--tint">
+              <span class="card__k">Criteri di scelta</span>
+              <ul class="ticks" style="gap:8px">
+                <li>In che <strong>fase</strong> sono? (ricerca, idea, proto)</li>
+                <li>Mi serve <strong>testo, immagine o UI</strong>?</li>
+                <li>Quanto conta la <strong>verifica</strong> delle fonti?</li>
+                <li>Dove finiscono i <strong>dati</strong> che carico?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Anchor: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~2 min</b> — Il criterio “in che fase sono” è il filo di tutta la lezione.</div></aside>
+      </section>
+
+      <!-- 3 · MAPPA DESIGN PROCESS -->
+      <section class="slide slide--dark" aria-roledescription="slide">
+        <p class="eyebrow">La mappa</p>
+        <h2 class="title">Un tool per ogni fase</h2>
+        <div class="body">
+          <div class="cols cols-5" style="grid-template-columns:repeat(5,1fr)">
+            <div class="card card--dark"><span class="card__k">Empathize</span><p class="card__d">ChatGPT custom · Synthetic Users</p></div>
+            <div class="card card--dark"><span class="card__k">Define</span><p class="card__d">Perplexity</p></div>
+            <div class="card card--dark"><span class="card__k">Ideate</span><p class="card__d">Midjourney · DALL·E</p></div>
+            <div class="card card--dark"><span class="card__k">Prototype</span><p class="card__d">UX Pilot · Creatie · Claude · Figma AI</p></div>
+            <div class="card card--dark"><span class="card__k">Test</span><p class="card__d">Synthetic Users · Manus</p></div>
+          </div>
+          <p class="lead">Framework: TAG · <strong>AI tools deep dive</strong> (Sketchin/Jakala). Stessa logica del double diamond, con un copilota per fase.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Anchor: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~1,5 min</b> — Questa è la slide-bussola. Ci si torna mentalmente a ogni tool. Poi passa ad Alberto.</div></aside>
+      </section>
+
+      <!-- 4 · EMPATHIZE -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Empathize</p>
+        <h2 class="title">Capire gli utenti, più in fretta</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <div class="card">
+              <span class="card__k">ChatGPT custom (GPTs)</span>
+              <p class="card__t">Un assistente su misura</p>
+              <p class="card__d">Profili addestrati su ruolo, tono e dati tuoi. Simula interviste, sintetizza trascrizioni, genera insight su bisogni e aspettative.</p>
+              <p class="micro"><span class="badge badge--warn">Occhio</span> qualità = precisione del setup e dei prompt.</p>
+            </div>
+            <div class="card">
+              <span class="card__k">Synthetic Users</span>
+              <p class="card__t">Personas “sintetiche”</p>
+              <p class="card__d">Genera utenti realistici per esplorare bisogni e scenari difficili da raggiungere. Utile per farsi le domande giuste in fretta.</p>
+              <p class="micro"><span class="badge badge--no">Limite</span> non sostituisce utenti veri: può ereditare bias dei dati.</p>
+            </div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Relatore: Alberto</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Alberto · ~4 min</b> — Fonte: AI tools deep dive (TAG). Disclaimer netto: le personas sintetiche <b>preparano</b> la ricerca, non la sostituiscono.</div></aside>
+      </section>
+
+      <!-- 5 · DEFINE -->
+      <section class="slide slide--tint" aria-roledescription="slide">
+        <p class="eyebrow">Define</p>
+        <h2 class="title">Perplexity: ricerca con le fonti</h2>
+        <div class="body">
+          <div class="cols cols-2-1">
+            <ul class="ticks">
+              <li>Motore di ricerca conversazionale: risposte sintetiche a domande complesse.</li>
+              <li><strong>Cita le fonti</strong> → puoi verificare (a differenza di una chat “nuda”).</li>
+              <li>Ottimo per raccogliere insight su trend e comportamenti, poi far sintetizzare i dati nel formato che vuoi.</li>
+            </ul>
+            <div class="card">
+              <span class="card__k">Quando usarlo</span>
+              <p class="card__d">Desk research iniziale, benchmark, “dammi 5 fonti recenti su…”. Poi porti le fonti fuori e le controlli.</p>
+              <p class="micro"><span class="badge badge--warn">Occhio</span> la qualità dipende dalla domanda.</p>
+            </div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Relatore: Alberto</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Alberto · ~3 min</b> — Il gancio è “fonti citate = verificabile”. Collega alla L1: l'AI è probabilistica, quindi le fonti contano.</div></aside>
+      </section>
+
+      <!-- 6 · IDEATE -->
+      <section class="slide slide--dark" aria-roledescription="slide">
+        <p class="eyebrow">Ideate</p>
+        <h2 class="title">Midjourney &amp; DALL·E: dal testo all'immagine</h2>
+        <div class="body">
+          <div class="code">MEDIUM <span class="c-dim">+</span> SUBJECT <span class="c-dim">+</span> DETAILS <span class="c-dim">+</span> PARAMETERS <span class="c-dim">// la formula della Lezione 1</span></div>
+          <div class="cols cols-2">
+            <div class="card card--dark"><span class="card__k">Midjourney</span><p class="card__d">Qualità e stile altissimi, molti parametri. Curva d'ingresso più ripida: i prompt vanno scritti bene.</p></div>
+            <div class="card card--dark"><span class="card__k">DALL·E (in ChatGPT)</span><p class="card__d">Facile, iterazione rapida, integrato nella chat. Meno parametri, qualche limite stilistico.</p></div>
+          </div>
+          <p class="lead">Uso da designer: <strong>moodboard, concept, storytelling</strong> visivo per presentare idee — non asset finali di produzione.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Relatore: Gaia</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Gaia · ~3,5 min</b> — Richiama la formula immagini della L1 (Sara). Se hai esempi Midjourney vs DALL·E dello stesso prompt, mostrali.</div></aside>
+      </section>
+
+      <!-- 7 · PROTOTYPE -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Prototype</p>
+        <h2 class="title">Dal prompt all'interfaccia</h2>
+        <div class="body">
+          <div class="cols cols-3">
+            <div class="card"><span class="card__k">UX Pilot</span><p class="card__t">Mockup interattivi</p><p class="card__d">Genera layout e interfacce da un prompt + reference. Iterazione rapida; rifinitura manuale.</p></div>
+            <div class="card"><span class="card__k">Creatie</span><p class="card__t">Varianti visive</p><p class="card__d">Prototipi in minuti, importa da Figma, propone 3 candidati per concept.</p></div>
+            <div class="card card--mag"><span class="card__k">Claude</span><p class="card__t">Testo → codice</p><p class="card__d">Wireframe, documentazione e <strong>codice + anteprima</strong> del prototipo. Più “chat” che tool di design, ma potente.</p></div>
+          </div>
+          <p class="lead">Pattern comune: <em class="hl">prompt → mockup/codice → export</em>. Utile per far vedere un'idea agli stakeholder <strong>oggi</strong>, non tra due sprint.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Relatore: Gaia</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Gaia · ~3,5 min</b> — Fonte: AI tools deep dive (UX Pilot/Creatie/Claude). Claude fa da ponte verso Antigravity nella seconda metà.</div></aside>
+      </section>
+
+      <!-- 8 · FIGMA AI -->
+      <section class="slide slide--tint" aria-roledescription="slide">
+        <p class="eyebrow">Nel nostro tool · 1</p>
+        <h2 class="title">Figma AI: l'AI dentro casa</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <ul class="ticks">
+              <li><strong>First Draft / Make:</strong> genera bozze di UI da testo, dentro Figma.</li>
+              <li><strong>Ricerca visuale:</strong> “trovami un componente simile a questo”.</li>
+              <li><strong>Rename &amp; riordino layer</strong> automatici (finalmente).</li>
+              <li>Rimane nel nostro file: niente export, niente context-switch.</li>
+            </ul>
+            <div class="card">
+              <span class="card__k">Perché conta</span>
+              <p class="card__d">Meno lavoro-noia (naming, tidy-up), più tempo sul ragionamento di design. Il primo draft è un punto di partenza, non la consegna.</p>
+            </div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Relatore: Sara</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Sara · ~3 min</b> — <b>[Verifica feature disponibili]</b> sul vostro piano Figma prima dell'aula (le funzioni AI cambiano spesso).</div></aside>
+      </section>
+
+      <!-- 9 · VIZCOM -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Nel nostro tool · 2</p>
+        <h2 class="title">Vizcom: dallo sketch al render</h2>
+        <div class="body">
+          <div class="cols cols-2-1">
+            <ul class="ticks">
+              <li>Trasforma <strong>schizzi 2D</strong> in render fotorealistici e viste 3D.</li>
+              <li>Nato per il design industriale/prodotto: utile per styling UI e concept veloci.</li>
+              <li>Controllo su forma e stile a partire dal tuo disegno, non da zero.</li>
+            </ul>
+            <div class="card card--mag">
+              <span class="card__k">Uso tipico</span>
+              <p class="card__d">Passare da un thumbnail a mano a un concept presentabile in minuti, mantenendo la tua intenzione di forma.</p>
+            </div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Relatore: Sara</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Sara · ~2,5 min</b> — Se qualcuno del team lo usa, fagli mostrare 10 secondi dal vivo: fa più effetto di mille parole.</div></aside>
+      </section>
+
+      <!-- 10 · MANUS -->
+      <section class="slide slide--dark" aria-roledescription="slide">
+        <p class="eyebrow">Nel nostro tool · 3</p>
+        <h2 class="title">Manus AI: un agente che “fa”</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <ul class="ticks">
+              <li>Agente autonomo che opera <strong>direttamente nel browser</strong>.</li>
+              <li>Esegue task multi-step al posto tuo: ricerca, compila, confronta, produce output.</li>
+              <li>Applicazione UX: <strong>test automatizzati</strong> simulando percorsi utente reali.</li>
+            </ul>
+            <div class="card card--dark">
+              <span class="card__k">Il salto concettuale</span>
+              <p class="card__d">Da “strumento che risponde” a “collega che agisce”. Ottimo, ma richiede <strong>supervisione</strong>: gli dai un obiettivo, controlli il percorso.</p>
+            </div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Relatore: Sara</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Sara · ~2,5 min</b> — Introduce il concetto di “agente” che poi torna con Antigravity. Passa la palla ad Alberto per Google AI Studio.</div></aside>
+      </section>
+
+      <!-- 11 · GOOGLE AI STUDIO -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Bonus</p>
+        <h2 class="title">Google AI Studio &amp; Gemini</h2>
+        <div class="body">
+          <div class="cols cols-2-1">
+            <ul class="ticks">
+              <li>Il <strong>playground</strong> per testare i modelli multimodali di Google.</li>
+              <li>Dai in pasto un'immagine / export Figma e chiedi: “converti questo layout in frontend”.</li>
+              <li><strong>Context window enorme</strong>: puoi dargli interi documenti o flussi.</li>
+            </ul>
+            <div class="card card--tint">
+              <span class="card__k">Da designer</span>
+              <p class="card__d">Sperimentazione a basso costo prima di scegliere un tool “di produzione”. Image-to-code per capire la fattibilità.</p>
+            </div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Relatore: Alberto</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Alberto · ~3 min</b> — Tienilo leggero: è il “laboratorio”. Poi passa a Sara per il quiz.</div></aside>
+      </section>
+
+      <!-- 12 · QUIZ 3 -->
+      <section class="slide slide--divider" aria-roledescription="slide">
+        <p class="eyebrow">Quiz Kahoot · #3</p>
+        <h2 class="title">Devi citare fonti attendibili per un benchmark. Quale apri?</h2>
+        <div class="quiz">
+          <ul class="quiz__opts" style="list-style:none;padding:0;margin:0">
+            <li class="quiz__opt"><b>A</b> Midjourney</li>
+            <li class="quiz__opt"><b>B</b> Vizcom</li>
+            <li class="quiz__opt quiz__opt--right"><b>C</b> Perplexity <span class="quiz__tag">✓ Corretto</span></li>
+            <li class="quiz__opt"><b>D</b> Il tuo intuito alle 18:55</li>
+          </ul>
+          <div class="card card--dark center">
+            <span class="card__k" style="color:var(--c-blue-300)">Rispondi ora</span>
+            <p class="card__t" style="color:#fff">Kahoot</p>
+            <p class="card__d">[QR / PIN partita Kahoot — inserire prima dell'aula]</p>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Conduce: Sara</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Sara · ~2,5 min</b> — Perplexity perché <b>cita le fonti</b>. La D strappa la risata. Poi Caterina sul workflow reale.</div></aside>
+      </section>
+
+      <!-- 13 · WORKFLOW -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Metterli insieme</p>
+        <h2 class="title">Un flusso reale, dal brief al proto</h2>
+        <div class="body">
+          <div class="steps">
+            <div class="step"><span class="step__n">1 · DEFINE</span><p class="step__t">Perplexity</p><p class="step__d">Desk research + fonti.</p></div>
+            <div class="step"><span class="step__n">2 · EMPATHIZE</span><p class="step__t">ChatGPT / Synthetic Users</p><p class="step__d">Domande giuste, ipotesi utenti.</p></div>
+            <div class="step"><span class="step__n">3 · IDEATE</span><p class="step__t">Midjourney</p><p class="step__d">Moodboard e concept.</p></div>
+            <div class="step"><span class="step__n">4 · PROTOTYPE</span><p class="step__t">Figma AI / Claude</p><p class="step__d">UI e primo codice.</p></div>
+            <div class="step"><span class="step__n">5 · SHIP</span><p class="step__t">Antigravity</p><p class="step__d">Proto funzionante.</p></div>
+          </div>
+          <p class="lead">Nessun tool fa tutto. Il valore è nella <em class="hl">catena</em> — e nel designer che la dirige e verifica ad ogni passo.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Anchor: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~4 min</b> — Racconta un mini-caso (anche inventato ma plausibile). Chiudi lanciando Antigravity: “l'ultimo anello”.</div></aside>
+      </section>
+
+      <!-- 14 · ANTIGRAVITY 1 -->
+      <section class="slide slide--dark" aria-roledescription="slide">
+        <p class="eyebrow">Antigravity · 1</p>
+        <h2 class="title">Cos'è Antigravity</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <ul class="ticks">
+              <li>Ambiente di sviluppo <strong>agentico</strong>: l'AI non completa righe, <strong>pianifica ed esegue</strong>.</li>
+              <li>Legge i file, propone un piano, lavora con <strong>sub-agenti</strong>, usa terminale e browser.</li>
+              <li>Restituisce <strong>artefatti verificabili</strong>: codice, anteprime, prototipi navigabili.</li>
+            </ul>
+            <div class="card card--dark">
+              <span class="card__k">In una frase</span>
+              <p class="card__d">Non sostituisce il designer: <strong>amplifica</strong> la capacità di trasformare un'idea in qualcosa di funzionante, subito.</p>
+            </div>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Relatore: Alberto</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Alberto · ~4 min</b> — <b>[Demo dal vivo o registrata consigliata]</b>. Concetti chiave: piano, sub-agenti, artefatti. Non tecnicismi.</div></aside>
+      </section>
+
+      <!-- 15 · ANTIGRAVITY 2 -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Antigravity · 2</p>
+        <h2 class="title">Il designer diventa “Director”</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <div class="card card--flat">
+              <span class="card__k">Prima</span>
+              <p class="card__d">Figma → passaggio a sviluppo → prototipo (giorni/settimane).</p>
+            </div>
+            <div class="card card--tint">
+              <span class="card__k">Con Antigravity</span>
+              <p class="card__d">Figma / idea → <strong>Antigravity</strong> → prototipo funzionante (ore).</p>
+            </div>
+          </div>
+          <p class="lead">Cambia il ruolo: da chi disegna schermate a chi <em class="hl">dirige</em> intento, qualità e coerenza. Descrivi cosa vuoi, giudichi cosa torna, iteri. La responsabilità del <strong>gusto</strong> resta nostra.</p>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Relatore: Alberto</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Alberto · ~4 min</b> — Messaggio rassicurante: l'AI toglie la fatica meccanica, non il giudizio di design. Passa a Gaia per etica/limiti.</div></aside>
+      </section>
+
+      <!-- 16 · ETICA & LIMITI -->
+      <section class="slide slide--tint" aria-roledescription="slide">
+        <p class="eyebrow">Etica &amp; limiti operativi</p>
+        <h2 class="title">Veloci sì, ma con la testa</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <ul class="ticks no">
+              <li><strong>Verifica:</strong> output probabilistico → controlla dati, codice, fonti.</li>
+              <li><strong>Dati &amp; privacy:</strong> cosa carichi e dove finisce? No a dati sensibili/clienti su tool non approvati.</li>
+              <li><strong>IP &amp; licenze:</strong> attenzione a immagini e codice generati (uso commerciale).</li>
+            </ul>
+            <ul class="ticks no">
+              <li><strong>Bias:</strong> vale anche qui — inclusività = specificità (vedi L1, Dove).</li>
+              <li><strong>Energia:</strong> scegli il medium giusto (testo &lt; immagine &lt; video).</li>
+              <li><strong>Accessibilità:</strong> ciò che genera l'AI va comunque reso conforme (contrasto, alt, tastiera).</li>
+            </ul>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Relatore: Gaia</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Gaia · ~5 min</b> — <b>[Allineare a policy interne Jakala su dati/tool approvati]</b>. Chiudi: “l'AI accelera, il criterio è nostro”.</div></aside>
+      </section>
+
+      <!-- 17 · RECAP -->
+      <section class="slide" aria-roledescription="slide">
+        <p class="eyebrow">Recap del corso</p>
+        <h2 class="title">Due lezioni, una sola idea</h2>
+        <div class="body">
+          <div class="cols cols-2">
+            <ul class="ticks ok">
+              <li>L1: capire l'AI e <strong>parlarle bene</strong> (prompt = ruolo+contesto+formato).</li>
+              <li>L2: scegliere il <strong>tool giusto per la fase</strong>, non il tool “magico”.</li>
+              <li>Il valore è nella <strong>catena</strong> di tool + nel tuo giudizio.</li>
+            </ul>
+            <ul class="ticks ok">
+              <li>Verifica, dati, IP, energia, accessibilità: sempre.</li>
+              <li>Da esecutori a <strong>“Director”</strong>: intento e gusto restano nostri.</li>
+              <li><strong>Prossimo passo:</strong> libreria di prompt + tool condivisa del team.</li>
+            </ul>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Anchor: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~3 min</b> — Recap corale. Poi il quiz finale “per ridere e fissare”.</div></aside>
+      </section>
+
+      <!-- 18 · QUIZ 4 -->
+      <section class="slide slide--divider" aria-roledescription="slide">
+        <p class="eyebrow">Quiz Kahoot · #4</p>
+        <h2 class="title">Con Antigravity il designer diventa…</h2>
+        <div class="quiz">
+          <ul class="quiz__opts" style="list-style:none;padding:0;margin:0">
+            <li class="quiz__opt"><b>A</b> Disoccupato</li>
+            <li class="quiz__opt quiz__opt--right"><b>B</b> “Director”: dirige intento e qualità <span class="quiz__tag">✓ Corretto</span></li>
+            <li class="quiz__opt"><b>C</b> Un pulsante “Genera”</li>
+            <li class="quiz__opt"><b>D</b> Ancora in riunione</li>
+          </ul>
+          <div class="card card--dark center">
+            <span class="card__k" style="color:var(--c-blue-300)">Rispondi ora</span>
+            <p class="card__t" style="color:#fff">Kahoot</p>
+            <p class="card__d">[QR / PIN partita Kahoot — inserire prima dell'aula]</p>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Conduce: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~2 min</b> — “La D è tecnicamente sempre vera.” Rivela B. Chiudi in positivo e manda al feedback.</div></aside>
+      </section>
+
+      <!-- 19 · FEEDBACK -->
+      <section class="slide slide--cover" aria-roledescription="slide">
+        <p class="eyebrow">Grazie!</p>
+        <h2 class="title">Ultimo minuto: feedback</h2>
+        <div class="quiz">
+          <div class="stack">
+            <p class="lead">Fine del corso. Diteci cosa avete trovato utile, cosa manca e quale tool volete approfondire in un eventuale workshop pratico.</p>
+            <a class="linkbtn" href="https://docs.google.com/forms/d/e/1FAIpQLSeJZTftegDq98JXNZtkZJasJVOiVf8oY_5TCxx2qYzQPAw2Sw/viewform">Apri il modulo di feedback (Google Form) →</a>
+          </div>
+          <div class="qr">
+            <img src="../assets/qr-feedback.svg" alt="Codice QR per aprire il modulo di feedback su Google Form">
+            <p class="qr__c">Inquadra il QR o usa il link qui accanto</p>
+          </div>
+        </div>
+        <footer class="foot"><span>AI per Designer — Lezione 2</span><span class="who">Anchor: Caterina</span><span class="pg"></span></footer>
+        <aside class="notes"><div class="n-sec"><b>Caterina · ~1,5 min</b> — Ringrazia team e sala. Anticipa i prossimi passi (workshop pratico?). Lascia la slide su durante il Q&amp;A.</div></aside>
+      </section>
+
+    </div>
+  </div>
+
+  <nav class="deck-bar" aria-label="Controlli presentazione">
+    <strong>AI per Designer</strong> · L2 Tool &amp; Antigravity
+    <span class="spacer"></span>
+    <span class="legenda">N note · F schermo intero</span>
+    <button id="prev" type="button">← Indietro</button>
+    <span class="count" id="count">1 / 19</span>
+    <button id="next" type="button">Avanti →</button>
+    <button id="notes" type="button">Note</button>
+    <button id="fs" type="button">⛶ Full</button>
+    <a href="../index.html">Hub</a>
+  </nav>
+
+  <script src="../assets/deck.js"></script>
+</body>
+</html>
